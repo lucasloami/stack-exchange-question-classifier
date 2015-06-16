@@ -8,8 +8,6 @@ test_json <- './data/testcases/input00.txt'
 training_data <- fromJSON(file=json_path)
 test_data <- fromJSON(file=test_json)
 
-# df <- do.call("rbind", lapply(training_data, as.data.frame))
-# df2 <- do.call("rbind", lapply(test_data, as.data.frame))
 df <- lapply(training_data, function(x) {x$excerpt})
 yDf <- lapply(training_data, function(x) {x$topic})
 df2 <- lapply(test_data, function(x) {x$excerpt})
